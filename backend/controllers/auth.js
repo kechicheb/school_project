@@ -56,4 +56,4 @@ const generate_token = (data, id, type) => {
   );
 };
 
-export { generate_token, login };
+module.exports ={ generate_token, login };
