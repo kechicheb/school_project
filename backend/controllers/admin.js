@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { ObjectId } = mongoose;
+const { ObjectId } = mongoose.Types;
 const Teacher = require("../models/teacher");
 const Student = require("../models/student");
 const get_students = async (req, res) => {

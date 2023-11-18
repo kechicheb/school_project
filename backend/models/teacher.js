@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-
-
 const teacherSchema = new Schema(
   {
     username: { type: String, required: true },
@@ -13,5 +11,5 @@ const teacherSchema = new Schema(
   },
   { timestamps: true }
 );
-
-module.exports = model("Teacher", teacherSchema);
+const Teacher = model("Teacher", teacherSchema);
+module.exports = Teacher;
