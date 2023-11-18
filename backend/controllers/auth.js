@@ -51,7 +51,7 @@ const generate_token = (data, id, type) => {
       created: Math.floor(Date.now() / 1000),
       type: type,
     },
-    "secret",
+    process.env.SECRET,
     { expiresIn: 60 * 60 * 24 * 7 } // 1 week
   );
 };

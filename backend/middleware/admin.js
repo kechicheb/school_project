@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+const { ObjectId } = require("mongodb");
 
-const Teacher = require("../models/teacher")
+const Teacher = require("../models/teacher");
 const isAdmin = async (req, res, next) => {
   const teacher = await Teacher.findOne({
-    _id: new mongoose.ObjectId(res.locals.user_data._id),
+    _id: new ObjectId(res.locals.user_data._id),
   });
   if (!teacher) {
     return res.status(404).json({
@@ -19,6 +19,5 @@ const isAdmin = async (req, res, next) => {
     }
   }
 };
-
 
 module.exports = isAdmin;

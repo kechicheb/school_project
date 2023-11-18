@@ -1,5 +1,5 @@
 const express = require("express");
-const { createCourse } = require("../controllers/teacher");
+const { createCourse, tests } = require("../controllers/teacher");
 const {login} = require("../controllers/auth")
 const auth = require("../middleware/auth");
 const isTeacher = require("../middleware/teacher");
@@ -14,5 +14,6 @@ router.use(auth);
 router.use(isTeacher);
 
 router.post("/", createCourse);
+router.get("/", tests);
 
 module.exports = router;

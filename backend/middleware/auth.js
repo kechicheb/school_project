@@ -2,13 +2,12 @@ const jwt = require("jsonwebtoken");
 
 const requireAuth = async (req, res, next) => {
   // verify user is authenticated
-  const { authorization } = req.headers;
 
-  if (!authorization) {
+  if (!req.get("X-Authorization")) {
     return res.status(401).json({ error: "Authorization token required" });
   }
 
-  const token = authorization.split(" ")[1];
+  const token = req.get("X-Authorization");
 
   try {
     jwt.verify(token, process.env.SECRET, (err, decoded) => {
