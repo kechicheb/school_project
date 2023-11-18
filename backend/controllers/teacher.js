@@ -18,4 +18,4 @@ const createCourse = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
-module.exports = createCourse;
+module.exports = { createCourse };

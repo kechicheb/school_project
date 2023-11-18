@@ -13,4 +13,5 @@ get_courses = async (req, res) => {
     });
   }
 };
-module.exports = get_courses;
+
+module.exports = { get_courses };

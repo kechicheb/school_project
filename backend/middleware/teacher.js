@@ -10,4 +10,4 @@ const isTeacher = async (req, res, next) => {
 };
 
 
-module.exports = {isTeacher};
+module.exports = isTeacher;

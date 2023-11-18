@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const Teacher = require("../models/teacher");
 const { generate_token } = require("./auth");
 
-const register = async (req, res) => {
+const register_teacher = async (req, res) => {
   try {
     const data = req.body;
 
@@ -34,4 +34,4 @@ const register = async (req, res) => {
   }
 };
 
-module.exports= { register };
+module.exports=  register_teacher ;
