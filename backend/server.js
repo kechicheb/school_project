@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const teacherRoutes = require("./routes/teacher");
 const studentRoutes = require("./routes/student");
 const adminRoutes = require("./routes/admin");
-const {login} = require("./controllers/auth")
+
 // express app
 const app = express();
 const router = express.Router();
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 // routes
 
-app.use("/api/login",router.post("/", login))
+
 app.use("/api/admin", adminRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/teacher", teacherRoutes);

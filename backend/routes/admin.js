@@ -11,9 +11,12 @@ const register_student = require("../controllers/auth_student");
 const register_teacher = require("../controllers/auth_teacher");
 const auth = require("../middleware/auth");
 const isAdmin = require("../middleware/admin");
+const { login } = require("../controllers/auth");
 const router = express.Router();
 
 // require auth for all  routes
+router.post("/login", login);
+
 router.use(auth);
 router.use(isAdmin);
 
